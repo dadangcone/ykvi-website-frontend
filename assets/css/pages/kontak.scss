@@ -1,0 +1,39 @@
+.kontak{
+  .info-ykvi{
+    margin-top: 100px;
+    @media screen and (max-width: 767px){
+      margin: 30px 0;
+    }
+    h6{
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: $bl;
+    }
+    p{
+      font-size: 18px;
+      opacity: 0.6;
+      color: $bl;
+    }
+    a{
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      color: $bl;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      &:hover, &:focus{
+        color: $pri;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.map{
+  width: 100%;
+  height: 400px;
+  @media screen and (max-width: 767px){
+    height: 300px;
+  }
+}

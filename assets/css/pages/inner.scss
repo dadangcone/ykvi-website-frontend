@@ -1,0 +1,40 @@
+.hero.inner{
+    height: 620px;
+    @media screen and (max-width: 767px){
+        height: 500px;
+    }
+    .red-sect.blue{
+        height: 620px;
+        background-color: #4E9FF2;
+        @media screen and (max-width: 767px){
+            height: 500px;
+        }
+    }
+}
+
+.nav-page{
+    padding: 60px 0;
+    text-align: center;
+    @media screen and (max-width: 991px){
+        padding: 30px 0;
+    }
+    @media screen and (max-width: 767px){
+        padding: 15px 0;
+    }
+    a{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 15px;
+        color: $t;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        @media screen and (max-width: 767px){
+            display: block;
+            margin: 5px 0;
+        }
+        &:hover, &:focus{
+            text-decoration: none;
+            color: $pri;
+        }
+    }
+}

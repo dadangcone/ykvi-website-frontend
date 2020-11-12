@@ -1,0 +1,73 @@
+.plyr--video{
+  border-radius: 12px;
+  @media screen and (max-width: 767px){
+    margin-bottom: 20px;
+  }
+  .plyr__control--overlaid{
+    background-color: $wt;
+    width: 80px;
+    height: 80px;
+    svg{
+      fill: #3A41C7;
+      display: block;
+      margin: 0 auto;
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.gray-wrap{
+  padding: 90px 0;
+  background-color: #F9F9F9;
+  @media screen and (max-width: 991px){
+    padding: 45px 0;
+  }
+}
+
+.white-wrap{
+  padding: 90px 0;
+  background-color: #FFF;
+  @media screen and (max-width: 991px){
+    padding: 45px 0;
+  }
+}
+
+.section-title{
+  font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  @media screen and (max-width: 991px){
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  &.white{
+    color: #FFF;
+  }
+}
+
+.section-subtitle{
+  font-size: 18px;
+  opacity: 0.6;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  @media screen and (max-width: 991px){
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  &.white{
+    color: #FFF;
+  }
+}
+
+label{
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: $bl;
+}
+
+.validator{
+  font-size: 12px;
+  display: block;
+  margin-bottom: 8px;
+}

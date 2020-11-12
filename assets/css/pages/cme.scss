@@ -1,0 +1,56 @@
+.webinar-cme{
+  background-color: rgba($color: #3A41C7, $alpha: 0.08);
+  .item-webinar{
+    margin-bottom: 30px;
+    .plyr--video{
+      border-radius: 6px;
+      margin-bottom: 10px;
+      .plyr__control--overlaid{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        svg{
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+    h6{
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #0B0C22;
+    }
+    a{
+      font-size: 16px;
+      opacity: 0.6;
+      color: $t;
+      transition: all 0.3s ease;
+      &:hover, &:focus{
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.kursus-live{
+  background-color: #CD4B3F;
+  .plyr--video{
+    .plyr__control--overlaid{
+      svg{
+        fill: #CD4B3F;
+      }
+    }
+  }
+}
+
+.belajar-online{
+  .plyr--video{
+    .plyr__control--overlaid{
+      svg{
+        fill: #8168F3;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.btn-primary{
+    padding: 14px 30px;
+    background-color: $pri;
+    border-color: $pri;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+    &:hover, &:focus, &:active, &:disabled{
+        background-color: darken($pri, 10%) !important;
+        border-color: darken($pri, 10%) !important;
+        outline: none !important;
+    }
+}
+
+.btn-secondary{
+    padding: 12px 35px;
+    background-color: $sec;
+    border-color: $sec;
+    color: $t;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+    &:hover, &:focus, &:active, &:disabled{
+        background-color: lighten($sec, 10%) !important;
+        border-color: lighten($sec, 10%) !important;
+        color: $t !important;
+        outline: none !important;
+    }
+}
+
+.btn-white{
+    padding: 12px 35px;
+    background-color: $wt;
+    border-color: $wt;
+    color: rgba($color: $t, $alpha: 0.6);
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+    &:hover, &:focus, &:active, &:disabled{
+        background-color: $wt !important;
+        border-color: $wt !important;
+        color: $t !important;
+        outline: none !important;
+    }
+}
