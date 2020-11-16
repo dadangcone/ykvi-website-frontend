@@ -9,13 +9,13 @@
 					</b-col>
 					<b-col md="3">
 						<h6>Tautan Lain</h6>
-						<b-link to="">Wecoc</b-link>
-						<b-link to="">Kardiologi UI</b-link>
+						<b-link href="https://wecoc.co/" target=_blank>Wecoc</b-link>
+						<b-link href="http://kardiologiui.com/" target="_blank">Kardiologi UI</b-link>
 					</b-col>
 					<b-col md="4">
 						<h6>Kontak Kami</h6>
-						<span class="kontak"><img src="/phone.png" alt=""> 021 5684093 ext : 1554</span>
-						<span class="kontak"><img src="/mail.png" alt=""> yayasankardiovaskularindonesia@gmail.com </span>
+						<b-link href="tel:0215684093" class="kontak"><img src="/phone.png" alt=""> 021 5684093 ext : 1554</b-link>
+						<b-link href="mailto:yayasankardiovaskularindonesia@gmail.com" class="kontak"><img src="/mail.png" alt=""> yayasankardiovaskularindonesia@gmail.com </b-link>
 					</b-col>
         </b-row>
       </b-container>

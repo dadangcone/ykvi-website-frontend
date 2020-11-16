@@ -19,7 +19,7 @@
       </div>
     </b-container>
 
-    <div class="nav-page">
+    <div class="nav-page d-none">
       <b-container>
         <b-row>
           <b-col>
@@ -38,8 +38,8 @@
       <b-container>
         <b-row>
           <b-col md="8" offset-md="2">
-            <h3 class="section-title text-center">Sejarah</h3>
-            <p class="section-subtitle text-center">Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah organisasi nonpemerintah yang dibentuk oleh Departemen Kardiologi dan Kedokteran Vaskular FKUI. Saat ini YKVI diketuai oleh Dr. dr. Ismoyo Sunu, SpJP(K)</p>
+            <h3 class="section-title text-center mb-5">Yayasan Kardiovaskular Indonesia (YKVI)</h3>
+            <vue-markdown>{{ dataAbout.description }}</vue-markdown>
           </b-col>
         </b-row>
       </b-container>
@@ -67,9 +67,11 @@ export default {
   async asyncData({ app, route }) {
     let getBanner = await app.$axios.$get(`/banner`)
     let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
+    let getAbout = await app.$axios.$get('/about-us')
 
     return { 
       dataBanner: filteredBanner[0],
+      dataAbout: getAbout.data
     }
   },
   data(){

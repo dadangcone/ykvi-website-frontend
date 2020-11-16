@@ -9,6 +9,7 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/">Home</b-nav-item>
           <b-nav-item to="/kelas-online">Kelas Online</b-nav-item>
           <b-nav-item to="/cme">CME</b-nav-item>
           <b-nav-item to="/produk">Produk</b-nav-item>

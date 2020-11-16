@@ -39,6 +39,7 @@ export default {
     { src: '~/plugins/vue-plyr', mode: 'client' },
     { src: '~/plugins/vue-slick-carousel.js', mode: 'client' },
     { src: '~/plugins/vue2-google-maps.js', mode: 'client' },
+    { src: '~/plugins/vue-markdown.js', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

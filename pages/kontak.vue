@@ -36,6 +36,7 @@
               <b-link class="socmed" href="" target="_blank"><i class="fab fa-facebook-square"></i></b-link>
               <b-link class="socmed" href="" target="_blank"><i class="fab fa-twitter-square"></i></b-link>
               <b-link class="socmed" href="" target="_blank"><i class="fab fa-instagram"></i></b-link>
+              <b-link class="socmed" href="https://www.youtube.com/channel/UCekqBXYi2bhILgDQIakMYEw" target="_blank"><i class="fab fa-youtube"></i></b-link>
             </div>
           </b-col>
           <b-col md="6">

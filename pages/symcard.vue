@@ -22,9 +22,10 @@
     <div class="symcard gray-wrap">
       <b-container>
         <b-row>
-          <b-col md="8" offset-md="2">
+          <b-col md="8" offset-md="2" class="text-center">
             <h3 class="section-title text-center">Symcard</h3>
-            <p class="section-subtitle text-center">Coming Soon</p>
+            <p class="section-subtitle text-center">{{ dataSymcard.title }}</p>
+            <b-link :href="dataSymcard.description" target="_blank" class="link-symcard text-center">{{ dataSymcard.description }}</b-link>
           </b-col>
         </b-row>
       </b-container>
@@ -52,9 +53,11 @@ export default {
   async asyncData({ app, route }) {
     let getBanner = await app.$axios.$get(`/banner`)
     let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
+    let getSymcard = await app.$axios.$get(`/sym-card`)
 
     return { 
       dataBanner: filteredBanner[0],
+      dataSymcard: getSymcard.data
     }
   },
   data(){

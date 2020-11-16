@@ -27,10 +27,10 @@
               Webinar
             </b-link>
             <b-link to="" v-scroll-to="'.kursus-live'">
-              Kursus Live
+              Live Course
             </b-link>
             <b-link to="" v-scroll-to="'.belajar-online'">
-              Belajar Online
+              Live Teaching
             </b-link>
           </b-col>
         </b-row>
@@ -44,7 +44,7 @@
             <h3 class="section-title">Webinar</h3>
             <p class="section-subtitle">Penjelasan sedikit mengenai webinar</p>
           </b-col>
-          <b-col md="4" v-for="item in dataCME" :key="item.id">
+          <b-col md="4" v-for="item in dataWebinar" :key="item.id">
             <div class="item-webinar">
               <vue-plyr>
                 <div class="blue-button small" data-plyr-provider="youtube" :data-plyr-embed-id="item.link_embed_youtube.slice(-11)"></div>
@@ -62,12 +62,12 @@
         <b-row class="align-items-center">
           <b-col md="6">
             <vue-plyr>
-              <div class="blue-button" data-plyr-provider="youtube" data-plyr-embed-id="xkEmO3I9RkM"></div>
+              <div class="blue-button" data-plyr-provider="youtube" :data-plyr-embed-id="dataCourse.link_embed_youtube.slice(-11)"></div>
             </vue-plyr>
           </b-col>
           <b-col md="6">
-            <h3 class="section-title white">Kursus Live</h3>
-            <p class="section-subtitle white">Coming Soon</p>
+            <h3 class="section-title white">{{ dataCourse.title }}</h3>
+            <p class="section-subtitle white">{{ dataCourse.type }}</p>
           </b-col>
         </b-row>
       </b-container>
@@ -77,12 +77,12 @@
       <b-container>
         <b-row class="align-items-center">
           <b-col md="6">
-            <h3 class="section-title">Pembelajaran live</h3>
-            <p class="section-subtitle">Coming Soon</p>
+            <h3 class="section-title">{{ dataTeaching.title }}</h3>
+            <p class="section-subtitle">{{ dataTeaching.type }}</p>
           </b-col>
           <b-col md="6">
             <vue-plyr>
-              <div class="blue-button" data-plyr-provider="youtube" data-plyr-embed-id="xkEmO3I9RkM"></div>
+              <div class="blue-button" data-plyr-provider="youtube" :data-plyr-embed-id="dataTeaching.link_embed_youtube.slice(-11)"></div>
             </vue-plyr>
           </b-col>
         </b-row>
@@ -112,10 +112,15 @@ export default {
     let getBanner = await app.$axios.$get(`/banner`)
     let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
     let getCME = await app.$axios.$get(`/cme`)
+    let tempWebinar = _.filter(getCME.data, ['type', 'Webinar'])
+    let tempCourse = _.filter(getCME.data, ['type', 'Live course']).slice(0, 1)
+    let tempTeaching = _.filter(getCME.data, ['type', 'Live teaching']).slice(0, 1)
 
     return { 
       dataBanner: filteredBanner[0],
-      dataCME: getCME.data,
+      dataWebinar: tempWebinar,
+      dataCourse: tempCourse[0],
+      dataTeaching: tempTeaching[0],
     }
   },
   data(){

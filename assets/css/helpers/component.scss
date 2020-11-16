@@ -71,3 +71,13 @@ label{
   display: block;
   margin-bottom: 8px;
 }
+
+.link-symcard{
+  display: inline-block;
+  color: $sec;
+  transition: all 0.3s ease;
+  &:hover, &:focus{
+    text-decoration: none;
+    color: darken($sec, 10%);
+  }
+}

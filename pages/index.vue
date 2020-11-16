@@ -8,7 +8,7 @@
               <div class="wrap">
                 <h3>Yayasan Kardiovaskular Indonesia</h3>
                 <p>Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah organisasi nonpemerintah yang dibentuk oleh Departemen Kardiologi dan Kedokteran Vaskular FKUI. Saat ini YKVI diketuai oleh Dr. dr. Ismoyo Sunu, SpJP(K)</p>
-                <b-link class="btn btn-primary" to="">Selengkapnya <img src="/arrow-right.png" alt=""></b-link>
+                <b-link class="btn btn-primary" to="/tentang-kami">Selengkapnya <img src="/arrow-right.png" alt=""></b-link>
               </div>
             </div>
           </b-col>
@@ -40,10 +40,10 @@
           <b-row>
             <b-col md="6">
               <h6>E-Learning</h6>
-              <h3>Kelas Populer</h3>
+              <h3>CME</h3>
             </b-col>
             <b-col md="6">
-              <b-link to="">
+              <b-link to="/cme">
                 Lihat Lainnya
                 <img src="/arrow-right-blue.png" alt="">
               </b-link>
@@ -51,12 +51,14 @@
           </b-row>
         </div>
         <b-row>
-          <b-col lg="3" md="6" v-for="kelas in kelas" :key="kelas.id">
-            <b-link to="" class="kelas-item">
-              <div class="image" :style="{ backgroundImage: 'url(' + kelas.img + ')' }"></div>
-              <h4>{{ kelas.judul }}</h4>
-              <h6>{{ kelas.mentor }}</h6>
-            </b-link>
+          <b-col lg="3" md="6" v-for="kelas in dataCME" :key="kelas.id">
+            <div class="kelas-item">
+              <vue-plyr>
+                <div class="blue-button small" data-plyr-provider="youtube" :data-plyr-embed-id="kelas.link_embed_youtube.slice(-11)"></div>
+              </vue-plyr>
+              <h4>{{ kelas.title }}</h4>
+              <h6>{{ kelas.type }}</h6>
+            </div>
           </b-col>
         </b-row>
       </b-container>
@@ -67,12 +69,12 @@
         <b-row class="align-items-center">
           <b-col md="6">
             <vue-plyr>
-              <div class="blue-button" data-plyr-provider="youtube" data-plyr-embed-id="xkEmO3I9RkM"></div>
+              <div class="blue-button" data-plyr-provider="youtube" :data-plyr-embed-id="dataWebinar.link_embed_youtube.slice(-11)"></div>
             </vue-plyr>
           </b-col>
           <b-col md="6">
-            <h6>Webinar</h6>
-            <h3>Saksikan webinar dari para ahli setiap minggunya</h3>
+            <h6>{{ dataWebinar.type }}</h6>
+            <h3>{{ dataWebinar.title }}</h3>
           </b-col>
         </b-row>
       </b-container>
@@ -94,6 +96,19 @@ export default {
         { hid: 'description', name: 'description', content: 'Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah organisasi nonpemerintah yang dibentuk oleh Departemen Kardiologi dan Kedokteran Vaskular FKUI.' },
         { hid: 'og:description', name: 'og:description', content: 'Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah organisasi nonpemerintah yang dibentuk oleh Departemen Kardiologi dan Kedokteran Vaskular FKUI.' },
       ]
+    }
+  },
+  async asyncData({ app, route }) {
+    let getBanner = await app.$axios.$get(`/banner`)
+    let filteredBanner = _.filter(getBanner.data, ['page_name', 'Home'])
+    let getCME = await app.$axios.$get(`/cme`)
+    let tempCME = _.filter(getCME.data, ['is_home', 1]).slice(0, 4)
+    let tempWebinar = _.filter(getCME.data, ['type', 'Webinar']).slice(0, 1)
+
+    return { 
+      dataBanner: filteredBanner[0],
+      dataCME: tempCME,
+      dataWebinar: tempWebinar[0],
     }
   },
   data(){
