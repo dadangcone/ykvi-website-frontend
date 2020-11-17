@@ -53,9 +53,7 @@
         <b-row>
           <b-col lg="3" md="6" v-for="kelas in dataCME" :key="kelas.id">
             <div class="kelas-item">
-              <vue-plyr>
-                <div class="blue-button small" data-plyr-provider="youtube" :data-plyr-embed-id="kelas.link_embed_youtube.slice(-11)"></div>
-              </vue-plyr>
+              <iframe class="small" :src="'https://www.youtube.com/embed/' + kelas.link_embed_youtube.slice(-11)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h4>{{ kelas.title }}</h4>
               <h6>{{ kelas.type }}</h6>
             </div>
@@ -68,9 +66,7 @@
       <b-container>
         <b-row class="align-items-center">
           <b-col md="6">
-            <vue-plyr>
-              <div class="blue-button" data-plyr-provider="youtube" :data-plyr-embed-id="dataWebinar.link_embed_youtube.slice(-11)"></div>
-            </vue-plyr>
+            <iframe class="big" :src="'https://www.youtube.com/embed/' + dataWebinar.link_embed_youtube.slice(-11)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </b-col>
           <b-col md="6">
             <h6>{{ dataWebinar.type }}</h6>

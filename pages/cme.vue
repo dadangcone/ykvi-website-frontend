@@ -46,9 +46,7 @@
           </b-col>
           <b-col md="4" v-for="item in dataWebinar" :key="item.id">
             <div class="item-webinar">
-              <vue-plyr>
-                <div class="blue-button small" data-plyr-provider="youtube" :data-plyr-embed-id="item.link_embed_youtube.slice(-11)"></div>
-              </vue-plyr>
+              <iframe class="small" :src="'https://www.youtube.com/embed/' + item.link_embed_youtube.slice(-11)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h6>{{ item.title }}</h6>
               <b-link :to="item.link_url_zoom">Link Zoom Webinar</b-link>
             </div>
@@ -61,9 +59,7 @@
       <b-container>
         <b-row class="align-items-center">
           <b-col md="6">
-            <vue-plyr>
-              <div class="blue-button" data-plyr-provider="youtube" :data-plyr-embed-id="dataCourse.link_embed_youtube.slice(-11)"></div>
-            </vue-plyr>
+            <iframe class="big" :src="'https://www.youtube.com/embed/' + dataCourse.link_embed_youtube.slice(-11)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </b-col>
           <b-col md="6">
             <h3 class="section-title white">{{ dataCourse.title }}</h3>
@@ -81,9 +77,7 @@
             <p class="section-subtitle">{{ dataTeaching.type }}</p>
           </b-col>
           <b-col md="6">
-            <vue-plyr>
-              <div class="blue-button" data-plyr-provider="youtube" :data-plyr-embed-id="dataTeaching.link_embed_youtube.slice(-11)"></div>
-            </vue-plyr>
+            <iframe class="big" :src="'https://www.youtube.com/embed/' + dataTeaching.link_embed_youtube.slice(-11)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </b-col>
         </b-row>
       </b-container>
