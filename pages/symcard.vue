@@ -23,9 +23,10 @@
       <b-container>
         <b-row>
           <b-col md="8" offset-md="2" class="text-center">
-            <h3 class="section-title text-center">Symcard</h3>
-            <p class="section-subtitle text-center">{{ dataSymcard.title }}</p>
-            <b-link :href="dataSymcard.description" target="_blank" class="link-symcard text-center">{{ dataSymcard.description }}</b-link>
+            <h3 class="section-title text-center">Symcard</h3><br><br>
+             <img :src="dataSymcard.url_sym_card_image" alt="" class="img-about">
+            <!-- <p class="section-subtitle text-center">{{ dataSymcard.title }}</p> -->
+            <b-link :href="dataSymcard.description" target="_blank" class="link-symcard text-center">{{ dataSymcard.title }}</b-link>
           </b-col>
         </b-row>
       </b-container>

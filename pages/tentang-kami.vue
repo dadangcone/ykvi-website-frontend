@@ -38,7 +38,8 @@
       <b-container>
         <b-row>
           <b-col md="8" offset-md="2">
-            <h3 class="section-title text-center mb-5">Yayasan Kardiovaskular Indonesia (YKVI)</h3>
+            <h3 class="section-title text-center mb-5">{{ dataAbout.title }}</h3>
+            <img :src="dataAbout.url_about_us_image" alt="" class="img-about">
             <vue-markdown>{{ dataAbout.description }}</vue-markdown>
           </b-col>
         </b-row>

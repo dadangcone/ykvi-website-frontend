@@ -76,6 +76,8 @@ label{
   display: inline-block;
   color: $sec;
   transition: all 0.3s ease;
+  font-size: 30px;
+  font-weight: bold;
   &:hover, &:focus{
     text-decoration: none;
     color: darken($sec, 10%);
@@ -97,4 +99,9 @@ iframe.big{
   @media screen and (max-width: 991px){
     height: 250px;
   }
+}
+
+.img-about{
+  width: 100%;
+  padding-bottom: 50px;
 }

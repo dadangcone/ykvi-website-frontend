@@ -38,8 +38,10 @@
       <b-container>
         <b-row>
           <b-col md="8" offset-md="2">
-            <h3 class="section-title text-center">Tentang Ruang Kardiovaskular</h3>
-            <p class="section-subtitle text-center">Ruang Kardiovaskular Indonesia adalah tempat belajar ilmu dan keterampilan kardiovaskular online pertama di Indonesia. Anda dapat mengakses materi dimanapun Anda berada tanpa dibatasi oleh ruang dan waktu. </p>
+            <h3 class="section-title text-center">{{ dataElearning.title }}</h3>
+            <p class="section-subtitle text-center">{{ dataElearning.description}}</p>
+            <span><b-link :href="dataElearning.link_url_redirect" target="_blank" class="link-ruang text-center">Kunjungi Ruang Kardiovaskular Indonesia</b-link></span>
+            
           </b-col>
         </b-row>
       </b-container>
@@ -90,10 +92,12 @@ export default {
     let getBanner = await app.$axios.$get(`/banner`)
     let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
     let getFAQ = await app.$axios.$get(`/e-learning/faq`)
+    let getElearning = await app.$axios.$get(`/e-learning`)
 
     return { 
       dataBanner: filteredBanner[0],
       dataFAQ: getFAQ.data,
+      dataElearning: getElearning.data
     }
   },
   data(){
