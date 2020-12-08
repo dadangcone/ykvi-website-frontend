@@ -7,12 +7,13 @@
             <div class="red-sect blue">
               <div class="wrap">
                 <h3>Kelas Online</h3>
-                <p>Ruang Kardiovaskular Indonesia adalah tempat belajar ilmu dan keterampilan kardiovaskular online pertama di Indonesia. Anda dapat mengakses materi dimanapun Anda berada tanpa dibatasi oleh ruang dan waktu. </p>
+                <!-- <p>Ruang Kardiovaskular Indonesia adalah tempat belajar ilmu dan keterampilan kardiovaskular online pertama di Indonesia. Anda dapat mengakses materi dimanapun Anda berada tanpa dibatasi oleh ruang dan waktu. </p> -->
               </div>
             </div>
           </b-col>
           <b-col md="6">
-            <div class="image" style="background-image: url('/kelas-hero.png')"></div>
+            <div v-if="dataBanner" class="image" :style="{ backgroundImage: `url('${dataBanner.url_banner_image}')`}"></div>
+            <div v-else class="image"></div>
           </b-col>
         </b-row>
         <b-link to="" class="scroll" v-scroll-to="'.nav-page'"><img src="/chevron-down.png" alt=""></b-link>
@@ -90,12 +91,19 @@ export default {
   },
   async asyncData({ app, route }) {
     let getBanner = await app.$axios.$get(`/banner`)
-    let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
+    let filteredBanner = _.filter(getBanner.data, ['page_name', 'E-Learning'])
+    let tempBanner = null
+    if(filteredBanner.length > 0){
+      tempBanner = filteredBanner[0]
+    } else {
+      tempBanner = []
+    }
+
     let getFAQ = await app.$axios.$get(`/e-learning/faq`)
     let getElearning = await app.$axios.$get(`/e-learning`)
 
     return { 
-      dataBanner: filteredBanner[0],
+      dataBanner: tempBanner,
       dataFAQ: getFAQ.data,
       dataElearning: getElearning.data
     }

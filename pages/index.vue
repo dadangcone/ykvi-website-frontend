@@ -13,7 +13,8 @@
             </div>
           </b-col>
           <b-col md="6">
-            <div class="image" style="background-image: url('/hero.png')"></div>
+            <div v-if="dataBanner" class="image" :style="{ backgroundImage: `url('${dataBanner.url_banner_image}')`}"></div>
+            <div v-else class="image"></div>
           </b-col>
         </b-row>
         <b-link to="" class="scroll" v-scroll-to="'.daftar'"><img src="/chevron-down.png" alt=""></b-link>
@@ -96,13 +97,19 @@ export default {
   },
   async asyncData({ app, route }) {
     let getBanner = await app.$axios.$get(`/banner`)
-    let filteredBanner = _.filter(getBanner.data, ['page_name', 'Home'])
+    let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
+    let tempBanner = null
+    if(filteredBanner.length > 0){
+      tempBanner = filteredBanner[0]
+    } else {
+      tempBanner = []
+    }
     let getCME = await app.$axios.$get(`/cme`)
     let tempCME = _.filter(getCME.data, ['is_home', 1]).slice(0, 4)
     let tempWebinar = _.filter(getCME.data, ['type', 'Webinar']).slice(0, 1)
 
     return { 
-      dataBanner: filteredBanner[0],
+      dataBanner: tempBanner,
       dataCME: tempCME,
       dataWebinar: tempWebinar[0],
     }

@@ -6,7 +6,7 @@
           <b-col md="6">
             <div class="red-sect blue">
               <div class="wrap">
-                <h3>Symcard</h3>
+                <h3>Produk {{ dataProduct.name }}</h3>
                 <!-- <p>Coming Soon</p> -->
               </div>
             </div>
@@ -16,19 +16,30 @@
             <div v-else class="image"></div>
           </b-col>
         </b-row>
-        <b-link to="" class="scroll" v-scroll-to="'.symcard'"><img src="/chevron-down.png" alt=""></b-link>
+        <b-link to="" class="scroll" v-scroll-to="'.produk'"><img src="/chevron-down.png" alt=""></b-link>
       </div>
     </b-container>
 
-    <div class="symcard gray-wrap">
+    <div class="produk white-wrap">
       <b-container>
         <b-row>
-          <b-col md="8" offset-md="2" class="text-center">
-            <h3 class="section-title text-center">Symcard</h3>
-            <p class="section-subtitle text-center">{{ dataSymcard.title }}</p>
-            <img v-if="dataSymcard.url_sym_card_image" :src="dataSymcard.url_sym_card_image" alt="" class="img-fluid mb-4">
-            <vue-markdown>{{ dataSymcard.description }}</vue-markdown>
-            <b-link v-if="dataSymcard.link_embed_youtube" :to="dataSymcard.link_embed_youtube" class="link-symcard-embed">Klik disini untuk melihat video youtube symcard</b-link>
+          <b-col md="8" offset-md="2">
+            <b-carousel
+              v-model="slide"
+              :interval="4000"
+              controls
+              indicators
+              background="#ababab"
+              @sliding-start="onSlideStart"
+              @sliding-end="onSlideEnd"
+              class="mb-4"
+            >
+              <!-- Slides with image only -->
+              <b-carousel-slide v-for="item in dataProduct.product_details" :key="item.id" :img-src="item.url_product_image"></b-carousel-slide>
+
+            </b-carousel>
+
+            <p class="text-center">{{ dataProduct.description }}</p>
           </b-col>
         </b-row>
       </b-container>
@@ -43,10 +54,10 @@ import _ from "lodash";
 export default {
   head() {
     return {
-      title: 'Symcard | Yayasan Kardiovaskular Indonesia',
+      title: 'Produk | Yayasan Kardiovaskular Indonesia',
       meta: [
-        { hid: 'title', name: 'title', content: 'Symcard | Yayasan Kardiovaskular Indonesia' },
-        { hid: 'og:title', name: 'og:title', content: 'Symcard | Yayasan Kardiovaskular Indonesia' },
+        { hid: 'title', name: 'title', content: 'Produk | Yayasan Kardiovaskular Indonesia' },
+        { hid: 'og:title', name: 'og:title', content: 'Produk | Yayasan Kardiovaskular Indonesia' },
         { hid: 'keywords', name: 'keywords', content: 'Yayasan, Universitas Indonesia, Kardiologi, Indonesia, Yayasan Kardiologi Indonesia' },
         { hid: 'description', name: 'description', content: 'Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah organisasi nonpemerintah yang dibentuk oleh Departemen Kardiologi dan Kedokteran Vaskular FKUI.' },
         { hid: 'og:description', name: 'og:description', content: 'Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah organisasi nonpemerintah yang dibentuk oleh Departemen Kardiologi dan Kedokteran Vaskular FKUI.' },
@@ -55,23 +66,32 @@ export default {
   },
   async asyncData({ app, route }) {
     let getBanner = await app.$axios.$get(`/banner`)
-    let filteredBanner = _.filter(getBanner.data, ['page_name', 'SymCard'])
+    let filteredBanner = _.filter(getBanner.data, ['page_name', 'Product'])
     let tempBanner = null
     if(filteredBanner.length > 0){
       tempBanner = filteredBanner[0]
     } else {
       tempBanner = []
     }
-    let getSymcard = await app.$axios.$get(`/sym-card`)
+    let getProduct = await app.$axios.$get(`/product/` + route.params.slug)
 
     return { 
       dataBanner: tempBanner,
-      dataSymcard: getSymcard.data
+      dataProduct: getProduct.data,
     }
   },
   data(){
     return{
-
+      dataBanner: [],
+      slide: 0,
+    }
+  },
+  methods: {
+    onSlideStart(slide) {
+      this.sliding = true
+    },
+    onSlideEnd(slide) {
+      this.sliding = false
     }
   }
 }

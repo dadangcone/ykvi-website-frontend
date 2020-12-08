@@ -76,8 +76,6 @@ label{
   display: inline-block;
   color: $sec;
   transition: all 0.3s ease;
-  font-size: 30px;
-  font-weight: bold;
   &:hover, &:focus{
     text-decoration: none;
     color: darken($sec, 10%);
@@ -101,7 +99,9 @@ iframe.big{
   }
 }
 
-.img-about{
-  width: 100%;
-  padding-bottom: 50px;
+.link-symcard-embed{
+  text-align: left;
+  float: left;
+  margin-top: 20px;
+  color: #CD4B3F;
 }

@@ -7,12 +7,13 @@
             <div class="red-sect blue">
               <div class="wrap">
                 <h3>Kontak</h3>
-                <p>Coming Soon</p>
+                <!-- <p>Coming Soon</p> -->
               </div>
             </div>
           </b-col>
           <b-col md="6">
-            <div class="image" style="background-image: url('/produk-hero.png')"></div>
+            <div v-if="dataBanner" class="image" :style="{ backgroundImage: `url('${dataBanner.url_banner_image}')`}"></div>
+            <div v-else class="image"></div>
           </b-col>
         </b-row>
         <b-link to="" class="scroll" v-scroll-to="'.nav-page'"><img src="/chevron-down.png" alt=""></b-link>
@@ -134,10 +135,16 @@ export default {
   },
   async asyncData({ app, route }) {
     let getBanner = await app.$axios.$get(`/banner`)
-    let filteredBanner = _.filter(getBanner.data, ['page_name', 'CME'])
+    let filteredBanner = _.filter(getBanner.data, ['page_name', 'Contact Us'])
+    let tempBanner = null
+    if(filteredBanner.length > 0){
+      tempBanner = filteredBanner[0]
+    } else {
+      tempBanner = []
+    }
 
     return { 
-      dataBanner: filteredBanner[0],
+      dataBanner: tempBanner,
     }
   },
   data(){
