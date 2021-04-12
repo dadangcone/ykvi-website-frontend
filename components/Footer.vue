@@ -1,29 +1,37 @@
 <template>
   <footer>
-    <div class="footer-top">
-      <b-container>
+    <b-container fluid>
+      <div class="footer-top">
         <b-row>
-					<b-col md="5">
-						<img src="/logo-color.png" alt="" class="logo">
-						<p>National Cardiovascular Center Harapan Kita Diklat Building, 5th Floor Jl. Let. Jen. S. Parman, Kav. 87 Slipi Jakarta Barat, 11420</p>
-					</b-col>
-					<b-col md="3">
-						<h6>Tautan Lain</h6>
-						<b-link href="https://wecoc.co/" target=_blank>Wecoc</b-link>
-						<b-link href="http://kardiologiui.com/" target="_blank">Kardiologi UI</b-link>
-					</b-col>
-					<b-col md="4">
-						<h6>Kontak Kami</h6>
-						<b-link href="tel:0215684093" class="kontak"><img src="/phone.png" alt=""> 021 5684093 ext : 1554</b-link>
-						<b-link href="mailto:yayasankardiovaskularindonesia@gmail.com" class="kontak"><img src="/mail.png" alt=""> yayasankardiovaskularindonesia@gmail.com </b-link>
-					</b-col>
+          <b-col md="3">
+            <img src="/logo-white.png" alt="" class="logo" />
+          </b-col>
+          <b-col md="3">
+            <h6>Email</h6>
+            <b-link href="mailto:sekretariat@ykvi.or.id" class="kontak">
+              sekretariat@ykvi.or.id
+            </b-link>
+          </b-col>
+          <b-col md="2">
+            <h6>Telpon</h6>
+            <b-link href="tel:0215684093" class="kontak">
+              021-568 4085 Ext. 1427
+            </b-link>
+          </b-col>
+          <b-col md="4">
+            <h6>Alamat</h6>
+            <p>Jl. Letjen S. Parman Kav 87, Slipi, Jakarta Barat, 11420</p>
+          </b-col>
         </b-row>
-      </b-container>
-    </div>
-    <div class="footer-bot">
-			<b-container>
-				<p>©2020 Yayasan Kardiovaskular Indonesia . All Rights Reserved</p>
-			</b-container>
-    </div>
+      </div>
+      <div class="footer-bot">
+        <p>©2021 Yayasan Kardiovaskular Indonesia . All Rights Reserved</p>
+        <div class="socmed">
+          <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </b-container>
   </footer>
 </template>

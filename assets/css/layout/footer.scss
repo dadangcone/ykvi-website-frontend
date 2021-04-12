@@ -1,93 +1,115 @@
-footer{
-    border-top: 1px solid rgba($color: #0B0C22, $alpha: 0.07);
-    .footer-top{
-        padding: 50px 0 30px 0;
-        background-color: $wt;
-        @media screen and (max-width: 1199px){
-            text-align: center;
-        }
-        @media screen and (max-width: 767px){
-            padding: 30px 0 25px 0;
-        }
-        .logo{
-            margin-bottom: 15px;
-        }
-        p{
-            margin-bottom: 10px;
-            color: $bl;
-            opacity: 0.6;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-        h6{
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            @media screen and (max-width: 767px){
-                margin-top: 15px;
-            }
-        }
-        a{
-            color: $bl;
-            opacity: 0.6;
-            display: block;
-            font-size: 13px;
-            margin-bottom: 5px;
-            transition: all 0.3s ease;
-            &:hover, &:focus{
-                text-decoration: none;
-                opacity: 1;
-            }
-        }
-        a.kontak{
-            display: block;
-            position: relative;
-            padding-left: 25px;
-            font-size: 13px;
-            margin-bottom: 5px;
-            color: $bl;
-            opacity: 1;
-            @media screen and (max-width: 1199px){
-                word-break: break-all;
-            }
-            @media screen and (max-width: 1199px){
-                padding-left: 0px;
-            }
-            img{
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                @media screen and (max-width: 1199px){
-                    position: relative;
-                    left: auto;
-                    top: auto;
-                    transform: translateY(0);
-                }
-            }
-        }
+footer {
+  background-color: #121212;
+  .footer-top {
+    padding: 30px 0 20px 0;
+    @media screen and (max-width: 767px) {
+      padding: 15px 0;
+      text-align: center;
     }
-    .footer-bot{
-        padding: 15px 0 30px 0;
-        background-color: $wt;
-        p{
-            margin: 0;
-            color: $bl;
-            opacity: 0.6;
-            font-size: 13px;
-            position: relative;
-            @media screen and (max-width: 1199px){
-                text-align: center;
-            }
-            &:after{
-                content: "";
-                position: absolute;
-                height: 1px;
-                left: 0;
-                right: 0;
-                top: -25px;
-                background-color: rgba($color: $bl, $alpha: 0.15);
-            }
-        }
+    .logo {
+      margin-bottom: 15px;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 5px;
+      }
     }
+    p {
+      margin-bottom: 10px;
+      color: $wt;
+      opacity: 1;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    h6 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: $wt;
+      @media screen and (max-width: 767px) {
+        margin-top: 15px;
+      }
+    }
+    a {
+      color: $wt;
+      opacity: 1;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      transition: all 0.3s ease;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
+    a.kontak {
+      display: block;
+      position: relative;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: $wt;
+      opacity: 1;
+      @media screen and (max-width: 1199px) {
+        word-break: break-all;
+      }
+      @media screen and (max-width: 1199px) {
+        padding-left: 0px;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @media screen and (max-width: 1199px) {
+          position: relative;
+          left: auto;
+          top: auto;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  .footer-bot {
+    padding: 15px 0 30px 0;
+    border-top: 1px solid rgba($color: #fff, $alpha: 0.1);
+    p {
+      margin: 0;
+      color: $wt;
+      opacity: 1;
+      font-size: 13px;
+      position: relative;
+      float: left;
+      @media screen and (max-width: 767px) {
+        text-align: center;
+        float: none;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        left: 0;
+        right: 0;
+        top: -25px;
+        background-color: rgba($color: $bl, $alpha: 0.15);
+      }
+    }
+    .socmed {
+      float: right;
+      @media screen and (max-width: 767px) {
+        float: none;
+        text-align: center;
+        margin-top: 5px;
+      }
+      a {
+        margin-right: 15px;
+        i {
+          color: $wt;
+        }
+      }
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 }

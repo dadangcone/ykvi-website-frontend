@@ -1,15 +1,15 @@
-.accordion.faq{
-  .card{
+.accordion.faq {
+  .card {
     border: none;
     margin: 0;
     border-radius: 0;
     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-    .card-header{
+    .card-header {
       padding: 0;
       border: none;
       background-color: transparent;
       border-radius: 0;
-      .btn{
+      .btn {
         text-transform: capitalize;
         border-radius: 0;
         background-color: transparent;
@@ -18,39 +18,42 @@
         font-weight: 600;
         padding: 15px 0;
         border: none;
-        img{
+        img {
           transition: all 0.3s ease;
         }
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
           background-color: transparent !important;
         }
-        &.not-collapsed{
-          img{
+        &.not-collapsed {
+          img {
             transform: rotate(45deg);
           }
         }
       }
     }
-    .card-body{
+    .card-body {
       padding: 0px 0 20px 0;
     }
   }
 }
 
-.ruang{
-  span{
+.ruang {
+  margin-bottom: 70px;
+  @media screen and (max-width: 991px) {
+    margin-bottom: 35px;
+  }
+  span {
     padding-top: 25px;
     text-align: center;
     display: block;
   }
-  .link-ruang{
+  .link-ruang {
     text-decoration: none;
-    background: #CD4B3F;
-    padding: 10px 15px;
+    color: #cd4b3f;
     border-radius: 8px;
-    color: #fff;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
-
 }
-
