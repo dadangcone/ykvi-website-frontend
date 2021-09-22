@@ -9,14 +9,14 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="mr-auto">
           <!-- <b-nav-item to="/">Home</b-nav-item> -->
-          <b-nav-item to="/kelas-online">Kelas Online</b-nav-item>
+          <b-nav-item href="http://elearn.ykvi.or.id/" target="_blank">Kelas Online</b-nav-item>
           <b-nav-item to="/cme">CME</b-nav-item>
           <b-nav-item to="/produk">Produk</b-nav-item>
           <b-nav-item to="/symcard">Symcard</b-nav-item>
           <b-nav-item to="/tentang-kami">Tentang Kami</b-nav-item>
           <b-nav-item to="/Kontak">Kontak</b-nav-item>
         </b-navbar-nav>
-        <b-navbar-nav class="right-nav" right>
+        <b-navbar-nav class="right-nav d-none" right>
           <b-nav-item to="">Masuk</b-nav-item>
           <b-nav-item to="">Daftar</b-nav-item>
           <b-nav-item to="">
