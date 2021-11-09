@@ -16,10 +16,7 @@
               <div class="wrap">
                 <h2>Yayasan Kardiovaskular Indonesia</h2>
                 <h6>
-                  Yayasan Kardiovaskular Indonesia (YKVI) adalah sebuah
-                  organisasi nonpemerintah yang dibentuk oleh Departemen
-                  Kardiologi dan Kedokteran Vaskular FKUI. Saat ini YKVI
-                  diketuai oleh Dr. dr. Ismoyo Sunu, SpJP(K)
+                  Kami berkomitmen untuk memberikan edukasi ilmu kardiovaskular mutakhir yang komprehensif, fleksibal dan sesuai kebutuhan Anda.
                 </h6>
               </div>
             </div>
