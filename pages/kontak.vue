@@ -176,23 +176,20 @@
                             Jl. Letjen S. Parman Kav 87, Slipi, Jakarta Barat,
                             11420<br />
                             P | 021-568 4085 Ext. 1427<br />
-                            E | sekretariat@ykvi.or.id
+                            E | yayasankardiovaskularindonesia@gmail.com
                           </p>
-                          <b-link class="socmed" href="" target="_blank"
-                            ><i class="fab fa-facebook-square"></i
-                          ></b-link>
-                          <b-link class="socmed" href="" target="_blank"
-                            ><i class="fab fa-twitter-square"></i
-                          ></b-link>
-                          <b-link class="socmed" href="" target="_blank"
-                            ><i class="fab fa-instagram"></i
-                          ></b-link>
+                          <p>
+                           <b-link class="socmed" href="https://instagram.com/ykvi.kardiologi" target="_blank"
+                            ><i class="fab fa-instagram"></i> @ykvi.kardiologi
+                            </b-link><br />
                           <b-link
                             class="socmed"
-                            href="https://www.youtube.com/channel/UCekqBXYi2bhILgDQIakMYEw"
+                            href="https://www.youtube.com/@yayasankardiovaskularindon603"
                             target="_blank"
-                            ><i class="fab fa-youtube"></i
-                          ></b-link>
+                            ><i class="fab fa-youtube"></i>  Yayasan Kardiovaskular Indonesia
+                          </b-link>
+                          </p>
+                         
                         </div>
                       </b-col>
                     </b-row>
