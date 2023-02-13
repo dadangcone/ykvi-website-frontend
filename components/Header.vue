@@ -13,7 +13,7 @@
           <b-nav-item to="/cme">Webinar</b-nav-item>
           <b-nav-item to="/produk">Produk</b-nav-item>
           <b-nav-item to="/symcard">Symcard</b-nav-item>
-          <b-nav-item href="https://wecoc.co/" target="_blank">WECOC</b-nav-item>
+          <b-nav-item href="https://wecoc.id/" target="_blank">WECOC</b-nav-item>
           <b-nav-item to="/tentang-kami">Tentang Kami</b-nav-item>
           <b-nav-item to="/Kontak">Kontak</b-nav-item>
         </b-navbar-nav>
