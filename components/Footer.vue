@@ -8,8 +8,8 @@
           </b-col>
           <b-col md="3">
             <h6>Email</h6>
-            <b-link href="mailto:sekretariat@ykvi.or.id" class="kontak">
-              sekretariat@ykvi.or.id
+            <b-link href="mailto:yayasankardiovaskularindonesia@gmail.com" class="kontak">
+              yayasankardiovaskularindonesia@gmail.com
             </b-link>
           </b-col>
           <b-col md="2">
@@ -27,9 +27,8 @@
       <div class="footer-bot">
         <p>©2021 Yayasan Kardiovaskular Indonesia . All Rights Reserved</p>
         <div class="socmed">
-          <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@yayasankardiovaskularindon603" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://instagram.com/ykvi.kardiologi" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </b-container>
