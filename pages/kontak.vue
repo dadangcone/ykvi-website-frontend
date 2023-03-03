@@ -175,8 +175,8 @@
                           <p>
                             Jl. Letjen S. Parman Kav 87, Slipi, Jakarta Barat,
                             11420<br />
-                            <b-link href="tel:+62215684085">P | 021-568 4085 Ext. 1427<br />
-                            <b-link href="mailto:yayasankardiovaskularindonesia@gmail.com">E | yayasankardiovaskularindonesia@gmail.com<br />
+                            P | 021-568 4085 Ext. 1427<br />
+                            <b-link href="mailto:yayasankardiovaskularindonesia@gmail.com">E | yayasankardiovaskularindonesia@gmail.com</b-link><br />
                             <b-link href="tel:+6285890029355">M | +62-858-9002-9355 </b-link>
                           </p>
                           <p>
